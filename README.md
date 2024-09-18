@@ -34,7 +34,14 @@ FLUSH PRIVILEGES;
 
 Load the product inventory into the database
 
-cat > /db-load
+```
+sudo mysql < db-script.sql
+```
+
+The db-script file contains the below sql query. 
+It creates a table call 'products' and insert data on it.
+
+```
 USE ecomdb;
 
 CREATE TABLE products 
@@ -58,5 +65,5 @@ INSERT INTO products
   ("Phone Covers","20","c-7.png"),
   ("Phone","80","c-8.png"),
   ("Laptop","150","c-4.png");
-
+```
 
