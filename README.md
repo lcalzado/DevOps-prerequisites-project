@@ -10,7 +10,7 @@ before deep dive into the DevOps world.
 The original project was deployed on CentOS linux distribution but I adapted, deployed and tested
 on Ubuntu server 24.04
 
-**Note:** All the code and files are provided by KodeKloud
+**Note:** All codes and files are copyright of kodekloud
 Here is the public repo: https://github.com/kodekloudhub/learning-app-ecommerce.git
 
 
@@ -71,7 +71,7 @@ INSERT INTO products
   ("Laptop","150","c-4.png");
 ```
 
-Validate the information has been added.
+Validate that the information has been added.
 
 ```
 sudo mysql
@@ -103,21 +103,17 @@ Download the source code
 ```
 sudo apt update
 sudo apt install -y git
-
-```
-
-Update the working dir
-
-```
 sudo rm -rf /var/www/html/*
 sudo git clone https://github.com/lcalzado/DevOps-prerequisites-project.git /var/www/html/
 ```
+
 
 Update the index.php
 
 The index.php given is attempting to connect to 172.20.1.101 ip address
 but since we have configured the database on the same host we have to replace
 the value for 'localhost' so the fromt end can connect successfully to the database.
+
 ```
 <section class="best_business_area row">
             <div class="check_tittle wow fadeInUp" data-wow-delay="0.7s" id="product-list">
