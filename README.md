@@ -1,7 +1,17 @@
-# DevOps-prerequisites-project
+# Welcome to this DevOps prerequisites project
 
 ## Introduction
 
+This project is a LAMP stack application using Linux, Apache, Mysql and Php.
+It is a final work part of a DevOps prerequisites course developed by KodeKloud.
+Here we put in practice the most important skills and must have knowledge 
+before deep dive into the DevOps world.
+
+The original project was deployed on CentOS linux distribution but I adapted deployed and tested
+on Ubuntu server 24.04
+
+**Note:** All the code and files are provided by KodeKloud
+Here is the public repo: https://github.com/kodekloudhub/learning-app-ecommerce.git
 
 
 ### Install and configure the database.
