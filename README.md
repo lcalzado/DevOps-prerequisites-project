@@ -2,10 +2,9 @@
 
 ## Introduction
 
-## Deployment Pre-requisites
 
 
-Install and configure the database
+### Install and configure the database.
 
 ```
 sudo apt update
@@ -15,24 +14,24 @@ sudo systemctl enable mariadb
 sudo systemctl status mariadb
 ```
 
-Setup the firewall rules for the database
+Setup the firewall rules for the database.
 
 ```
 sudo ufw allow 3306\tcp
 sudo ufw reload
 ```
 
-Configure the database
+Configure the database.
 
 ```
 sudo mysql
-CREATE DATABASE ecomdb;
-CREATE USER 'ecomuser'@'localhost' IDENTIFIED BY 'ecompassword';
-GRANT ALL PRIVILEGES ON *.* TO 'ecomuser'@'localhost';
-FLUSH PRIVILEGES;
+Mariadb[none]> CREATE DATABASE ecomdb;
+Mariadb[none]> CREATE USER 'ecomuser'@'localhost' IDENTIFIED BY 'ecompassword';
+Mariadb[none]> GRANT ALL PRIVILEGES ON *.* TO 'ecomuser'@'localhost';
+Mariadb[none]> FLUSH PRIVILEGES;
 ```
 
-Load the product inventory into the database
+Load the product inventory into the database.
 
 ```
 sudo mysql < db-script.sql
@@ -67,3 +66,14 @@ INSERT INTO products
   ("Laptop","150","c-4.png");
 ```
 
+Validate the information has been added.
+
+```
+sudo mysql
+Mariadb[none]> SHOW databases;
+Mariadb[none]> USE ecomdb;
+Mariadb[none]> SHOW TABLES;
+Mariadb[none]> SELECT * FROM products;
+```
+
+### Deploy and configure the web service
