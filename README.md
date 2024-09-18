@@ -93,6 +93,44 @@ Download the source code
 ```
 sudo apt update
 sudo apt install -y git
+
+```
+
+Update the working dir
+
+```
 sudo rm -rf /var/www/html/*
 sudo git clone https://github.com/lcalzado/DevOps-prerequisites-project.git /var/www/html/
+```
+
+Update the index.php
+
+The index.php given is attempting to connect to 172.20.1.101 ip address
+but since we have configured the database on the same host we have to replace
+the value for 'localhost' so the fromt end can connect successfully to the database.
+```
+<section class="best_business_area row">
+            <div class="check_tittle wow fadeInUp" data-wow-delay="0.7s" id="product-list">
+                <h2>Product List</h2>
+            </div>
+            <div class="row it_works">
+              <?php
+
+                        $link = mysqli_connect('172.20.1.101', 'ecomuser', 'ecompassword', 'ecomdb');
+```
+
+You can modify that with the following command:
+```
+sudo sed -i 's/172.20.1.101/localhost/g' var/www/html/index.php
+```
+
+Reload the service
+
+```
+sudo systemctl reload apache2
+```
+
+Test
+```
+sudo curl http://localhost
 ```
