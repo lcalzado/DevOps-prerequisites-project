@@ -93,4 +93,6 @@ Download the source code
 ```
 sudo apt update
 sudo apt install -y git
+sudo rm -rf /var/www/html/*
 sudo git clone https://github.com/lcalzado/DevOps-prerequisites-project.git /var/www/html/
+```
