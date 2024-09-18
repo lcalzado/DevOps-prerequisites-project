@@ -77,3 +77,17 @@ Mariadb[none]> SELECT * FROM products;
 ```
 
 ### Deploy and configure the web service
+
+Install the apache and php packages
+
+```
+sudo apt update
+sudo apt install apache2 php php-mysqlnd
+```
+
+Setup the firewall rules for the web service
+
+```
+sudo ufw allow 80\tcp
+sudo ufw reload
+```
