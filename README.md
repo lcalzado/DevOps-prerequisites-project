@@ -14,12 +14,6 @@ sudo systemctl enable mariadb
 sudo systemctl status mariadb
 ```
 
-Setup the firewall rules for the database.
-
-```
-sudo ufw allow 3306\tcp
-sudo ufw reload
-```
 
 Configure the database.
 
@@ -31,14 +25,15 @@ Mariadb[none]> GRANT ALL PRIVILEGES ON *.* TO 'ecomuser'@'localhost';
 Mariadb[none]> FLUSH PRIVILEGES;
 ```
 
-Load the product inventory into the database.
+Load the product inventory into the database. 
+The file is on assest directory within this repository
 
 ```
 sudo mysql < db-script.sql
 ```
 
-The db-script file contains the below sql query. 
 It creates a table call 'products' and insert data on it.
+The db-script file contains the below sql query:
 
 ```
 USE ecomdb;
@@ -82,12 +77,20 @@ Install the apache and php packages
 
 ```
 sudo apt update
-sudo apt install apache2 php php-mysqlnd
+sudo apt install -y apache2 php php-mysql libapache2-mod-php
 ```
 
-Setup the firewall rules for the web service
+Configure apache
 
 ```
-sudo ufw allow 80\tcp
-sudo ufw reload
+sudo systemctl start apache2
+sudo systemctl enable apache2
+sudo systemctl status apache2
 ```
+
+Download the source code
+
+```
+sudo apt update
+sudo apt install -y git
+sudo git clone 
