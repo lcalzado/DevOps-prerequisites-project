@@ -4,13 +4,33 @@
 
 ## Deployment Pre-requisites
 
-Install FirewallD
+
+Install and configure the database
 
 ```
-sudo yum install -y firewalld
-sudo systemctl start firewalld
-sudo systemctl enable firewalld
-sudo systemctl status firewalld
-
-firewall-cmd --list
+sudo apt update
+sudo apt install mariadb-server
+sudo systemctl start mariadb
+sudo systemctl enable mariadb
+sudo systemctl status mariadb
 ```
+
+Setup the firewall rules for the database
+
+```
+sudo ufw allow 3306\tcp
+sudo ufw reload
+```
+
+Configure the database
+
+```
+sudo mysql
+CREATE DATABASE ecomdb;
+CREATE USER 'ecomuser'@'localhost' IDENTIFIED BY 'ecompassword';
+GRANT ALL PRIVILEGES ON *.* TO 'ecomuser'@'localhost';
+FLUSH PRIVILEGES;
+```
+
+
+
