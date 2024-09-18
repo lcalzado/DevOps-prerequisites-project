@@ -7,7 +7,7 @@ It is a final work part of a DevOps prerequisites course developed by KodeKloud.
 Here we put in practice the most important skills and must have knowledge 
 before deep dive into the DevOps world.
 
-The original project was deployed on CentOS linux distribution but I adapted deployed and tested
+The original project was deployed on CentOS linux distribution but I adapted, deployed and tested
 on Ubuntu server 24.04
 
 **Note:** All the code and files are provided by KodeKloud
